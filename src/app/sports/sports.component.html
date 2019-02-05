@@ -1,0 +1,110 @@
+<p class="userDetail_p">
+  Notification
+</p>
+<div class="maindiv">
+  <div style="padding:10px 20px; border-bottom:2px solid greenyellow;background: white">
+    Sportssssssss
+  </div>
+  <div class="nestedDiv">
+    <div class="row" style="margin:0px">
+      <div class="col-md-12" style="height:auto;padding: 0%;">
+        <div class="add_sport">
+          <button style="float:right" class="btn1">Save</button>
+          <p>Set Notification</p>
+
+          <div class="input_div">
+            <p style="">Title</p>
+            <input type="text" class="form-control pay_inp" placeholder="Notification Title" />
+
+
+            <p style="">Select category <span style="font-size: 10px">(200*200 in ptx)</span></p>
+            <div class="sports_filter">
+              <input type="text" style="height:35px;display: flex;width: 100%; border: none;" />
+              <span>
+                <div class="dropdown">
+                  <button style="border-radius:0px; border: 1px solid transparent;height: 35px;
+                      background-color: darkgrey;"
+                    class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScriptsss</a></li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+            <!-- ********Choose fields start***** -->
+            <div class="choose_filter">
+              <input style="height:35px;display: flex;width: 100%; border: none;" />
+              <span>
+                <button class="choose_btn">Browse</button>
+              </span>
+            </div>
+            <div class="choose_filter">
+              <input type="text" style="height:35px;display: flex;width: 100%; border: none;" />
+              <span>
+                <button class="choose_btn">Browse</button>
+              </span>
+            </div>
+            <div class="choose_filter">
+              <input type="text" style="height:35px;display: flex;width: 100%; border: none;" />
+              <span>
+                <button class="choose_btn">Browse</button>
+              </span>
+            </div>
+          
+
+            <label class="custom-file-upload">
+              <input type="file" /><span>
+              <button disabled class="choose_btn" style="float:right">Browse</button>
+            </span>
+            </label>
+
+            <!-- ********Choose fields end***** -->
+
+            <div class="button_div">
+              <button type="button" class="btn2">Upload</button><span style="margin-left:20px;">
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive" style="margin-right:20px">
+          <table class="table">
+            <thead>
+              <tr>
+
+                <th>Sport name</th>
+                <th>Category</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let j of paytabData; index as jindex">
+                <td>{{j.id}}</td>
+                <td>{{j.id}}</td>
+                <td style="width:35%;"><button class="btn4"><i class="fa fa-trash" style="margin-right:8px"></i>Edit</button>
+                  <span>
+                    <button class="btn5"><i class="fa fa-close" style="margin-right:8px"></i>Delete</button>
+                  </span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- *******Notification description**** -->
+      <!-- <div class="col-md-4">
+          <div style="height:450px;border: 1px solid #d5d5d5;
+          border-radius: 2px;">
+            <div class="notif_div" style="">
+              <p>Notification Statistics</p>
+            </div>
+          </div>
+        </div> -->
+    </div>
+    <div style="justify-content: center; display: flex; padding-top:20px; padding-bottom: 40px ">
+        <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+</div>

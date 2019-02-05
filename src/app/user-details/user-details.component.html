@@ -1,0 +1,177 @@
+<p class="userDetail_p">
+  User / Abhishek Kumar
+</p>
+<div class="maindiv">
+  <div class="nestedDiv">
+    <!-- ***********Profile start************* -->
+    <div class="container-fluid">
+      <div class="row" style="padding-top:20px;">
+        <div class="col-lg-3" style=" height: 154px;">
+          <img src="assets/img/game.jpeg" width="100%" height="100%">
+        </div>
+        <div class="col-lg-9">
+          <!-- ******dETAILS START***** -->
+          <div class="details">
+            <h2 style="margin:0%">Abhishek Kumar</h2>
+            <button class="userDetBtn">Suspend</button>
+            <span class="fa fa-star checked" style="margin-right:7px;"></span>
+            <span class="fa fa-star checked" style="margin-right:7px;"></span>
+            <span class="fa fa-star checked" style="margin-right:7px;"></span>
+            <span class="fa fa-star " style="margin-right:7px;"></span>
+            <span class="fa fa-star" style="margin-right:10px"></span>
+            <span>Based on 200 rating</span>
+          </div>
+          <div class="container-fluid">
+            <div class="row" style="padding-top:20px;">
+              <div class="col-lg-7" style="
+              border-right:1px solid grey;">
+                <p style="display:flex;justify-content:left">
+                  Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                      Pradesh, India </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+                </p>
+              </div>
+              <div class="col-lg-5" style="padding-left:45px">
+                <p style="display:flex;justify-content:left">
+                  Mobile No. <span style="margin-left:30px">:<span style="margin-left:30px"> 1234567890 </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Joining Date <span style="margin-left:20px">:<span style="margin-left:30px">20/12/19</span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ******dETAILS END***** -->
+        </div>
+      </div>
+      <!-- ***********Profile end************* -->
+
+    </div>
+    <!-- **********Interested in div start********** -->
+    <div class="interest">
+      <div style="padding: 10px 10px;border-bottom: 2px solid greenyellow;">
+        <h3 style="margin:0px;">
+          Interested In
+        </h3>
+      </div>
+      <!-- Game -->
+      <div>
+        <div class="row" style="padding:20px 20px 5px 20px; ">
+          <div class="col-lg-2" *ngFor="let i of gameData" style="margin-bottom: 5px;align-items: center">
+            <div class="game_card">
+              <img src={{i.url}} class="dash_img">
+              <h4>{{i.gamename}}</h4>
+              <h6>{{i.level}}</h6>
+
+              <!-- <div class="div1">
+                          <div class="div11">
+                              {{i.name}}
+                          </div>
+                          <div class="div12">
+                              {{i.lineBarValue}}<span style="margin-left:10px;"><img src={{i.logon}}></span>
+                          </div>
+                      </div>
+                      <div class="div2">
+                          <img src={{i.url}} class="dash_img">
+                      </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ************Table Div start******** -->
+    <div class="tab_div">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Sessions Created</a></li>
+        <li><a data-toggle="tab" href="#menu1">Sessions joined</a></li>
+        <li><a data-toggle="tab" href="#menu2">Baged Achieved</a></li>
+
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Username</th>
+                        <th>Contacts</th>
+                        <th>Location</th>
+                        <th>Date of joining</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                        <td><img src={{j.url}} class="tab1img"></td>
+                        <td>{{j.id}}</td>
+                        <td>{{j.email}}</td>
+                        <td>New York</td>
+                        <td>24 Jan 19</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Username</th>
+                        <th>Contacts</th>
+                        <th>Location</th>
+                        <th>Date of joining</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                        <td><img src={{j.url}} class="tab1img"></td>
+                        <td>{{j.id}}</td>
+                        <td>{{j.email}}</td>
+                        <td>New York</td>
+                        <td>24 Jan 19</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+              </table>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Username</th>
+                      <th>Contacts</th>
+                      <th>Location</th>
+                      <th>Date of joining</th>
+                      <th>Country</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                      <td><img src={{j.url}} class="tab1img"></td>
+                      <td>{{j.id}}</td>
+                      <td>{{j.email}}</td>
+                      <td>New York</td>
+                      <td>24 Jan 19</td>
+                      <td>USA</td>
+                  </tr>
+              </tbody>
+            </table>
+    </div>
+    </div>
+    <!-- ************Table Div end******** -->
+
+
+
+    <!-- **********Interested in div end********** -->
+    <div style="justify-content: center; display: flex;padding: 15px 0px">
+      <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<p class="userDetail_p">
+  Payment Details
+</p>
+<div class="maindiv">
+  <div class="nestedDiv">
+    <!-- ***********Profile start************* -->
+    <div style="margin-bottom:20px;padding: 10px 10px;border-bottom: 2px solid greenyellow;margin-left: -15px;margin-right: -15px">
+      <h3 style="margin:0px;">
+        Interested In
+      </h3>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" style="padding:20px;">
+        <div class="col-lg-6" style="padding-left: 25px;
+              border-right:1px solid grey;text-align: center">
+          <p style="display:flex;justify-content:left;margin-bottom: 15px">
+            Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                Pradesh, India </span></span>
+          </p>
+          <p style="display:flex;justify-content:left;margin-bottom: 15px">
+            Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+          </p>
+          <p style="display:flex;justify-content:left;margin-bottom: 0px">
+            Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+          </p>
+        </div>
+        <div class="col-lg-6" style="padding-left:115px">
+          <p style="display:flex;justify-content:left;font-size: 15px;margin-bottom: 15px">
+            Mobile No. <span style="margin-left:48px">:<span style="margin-left:60px"> 1234567890 </span></span>
+          </p>
+          <p style="display:flex;justify-content:left;margin-bottom: 15px">
+            Joining Date <span style="margin-left:48px">:<span style="margin-left:60px">20/12/19</span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- **********Interested in div start********** -->
+    <div class="interest">
+      <div style="padding: 10px 10px;border-bottom: 2px solid greenyellow;">
+        <h3 style="margin:0px;">
+          All Payments
+        </h3>
+      </div>
+      <!-- Game -->
+      <div class="container-fluid" *ngFor="let j of paytabData; index as jindex" 
+      style="margin:20px;border-bottom: 1px solid grey;padding:15px 0px 25px 0px;">
+        <div class="row" style="height:auto">
+          <div class="col-lg-1" style="padding-left: 25px;height:180px;
+             ">
+            <img src={{j.url}} style="border-radius:80%;height:15px;" alt="1">
+          </div>
+          <div class="col-lg-11" style="padding-left:15px;
+          ">
+            <p style="display:flex;justify-content:left;font-size: 15px;margin-bottom: 15px">
+              Mobile No. <span style="margin-left:48px">:<span style="margin-left:60px"> 1234567890 </span></span>
+            </p>
+            <p style="display:flex;justify-content:left;margin-bottom: 15px">
+              Joining Date <span style="margin-left:48px">:<span style="margin-left:60px">20/12/19</span></span>
+            </p>
+            <p style="display:flex;justify-content:left;margin-bottom: 15px">
+              Joining Date <span style="margin-left:48px">:<span style="margin-left:60px">20/12/19</span></span>
+            </p>
+            <p style="display:flex;justify-content:left;margin-bottom: 15px">
+              Joining Date <span style="margin-left:48px">:<span style="margin-left:60px">20/12/19</span></span>
+            </p>
+            <h4 style="margin-top:30px;">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+              into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+              release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+              software like Aldus PageMaker including versions of Lorem Ipsum.
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- **********pagination div********** -->
+    <div style="justify-content: center; display: flex;padding: 15px 0px">
+      <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+</div>

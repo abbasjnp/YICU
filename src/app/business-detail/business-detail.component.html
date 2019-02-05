@@ -1,0 +1,120 @@
+<p class="userDetail_p">
+  Business / AC / Gold gym
+</p>
+<div class="maindiv">
+  <div class="nestedDiv">
+    <!-- ***********Profile start************* -->
+    <div class="container-fluid">
+      <div class="row" style="padding-top:20px;">
+        <div class="col-lg-3" style=" height: 154px;">
+          <img src="assets/img/game.jpeg" width="89%" height="100%" class="bus_img">
+        </div>
+        <div class="col-lg-9">
+          <!-- ******dETAILS START***** -->
+          <div class="details">
+            <h2 style="margin:0%; margin-bottom: 10px;">Abhishek Kumar</h2>
+            <div [hidden]="NotHidden">
+              <button  type="button" class="btn userDetBtn1" style="padding:7px 20px">Diapprove</button>
+            </div>
+            <div >
+              <button (click)="onSelect()" type="button" class="btn btn-success userDetBtn" style="margin-left:10px;">Approve</button>
+            </div>
+            <div [hidden]="IsHidden" >
+              <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star " style="margin-right:7px;"></span>
+              <span class="fa fa-star" style="margin-right:10px"></span>
+              <span>Based on 200 rating</span>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row" style="padding-top:20px;">
+              <div class="col-lg-6" style="
+                border-right:1px solid grey;">
+                <p style="display:flex;justify-content:left">
+                  Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                      Pradesh, India </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+                </p>
+              </div>
+              <div class="col-lg-6" style="padding-left:45px">
+                <p style="display:flex;justify-content:left">
+                  Mobile No. <span style="margin-left:30px">:<span style="margin-left:30px"> 1234567890 </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Joining Date <span style="margin-left:20px">:<span style="margin-left:30px">20/12/19</span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ******dETAILS END***** -->
+        </div>
+      </div>
+      <!-- ***********Profile end************* -->
+
+    </div>
+    <!-- **********Interested in div start********** -->
+    <div class="interest">
+      <div style="padding: 10px 10px;border-bottom: 2px solid greenyellow;">
+        <h3 style="margin:0px;">
+          About Gold Gym
+        </h3>
+
+      </div>
+      <div class="text_business">
+        <h3 style="margin:10px;"> Just like Web and the entire web ecosystem, Angular is continuously improving.
+          Angular balances continuous
+          improvement with a strong focus on stability and making updates easy. Keeping your Angular app up-to-date
+          enables you to take advantage of leading-edge new features, as well as optimizations and bug fixes.
+
+          This document contains information and resources to help you keep your Angular apps and libraries up-to-date.
+        </h3>
+      </div>
+    </div>
+    <!-- ************Table Div start******** -->
+    <div class="tab_div" [hidden]="IsHidden">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Sessions Created</a></li>
+
+
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Username</th>
+                <th>Contacts</th>
+                <th>Location</th>
+                <th>Date of joining</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                <td>{{j.name}}</td>
+                <td>{{j.id}}</td>
+                <td>{{j.email}}</td>
+                <td>New York</td>
+                <td>24 Jan 19</td>
+                <td>USA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ************Table Div end******** -->
+
+
+
+      <!-- **********Interested in div end********** -->
+      <div style="justify-content: center; display: flex;padding: 15px 0px">
+        <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+      </div>
+    </div>
+  </div>

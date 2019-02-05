@@ -1,0 +1,93 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 145px;
+    background-color: white;
+    position: fixed;
+    height: 620px;
+    /* overflow: auto; */
+    border-right: 2px solid darkgrey;
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+
+  }
+  
+  .sidebar a {
+   background-color: white;
+    display: block;
+    color: black;
+    padding: 15px 8px 15px 12px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+      border-left:2px solid orangered; 
+    background-color: #E3E2E4;
+    color: gray;
+    /* opacity: 50%; */
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #EBCF98;
+    color: gray;
+    border-left:2px solid orange; 
+  }
+  
+  /* div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  } */
+
+ .img2{
+        margin: 10px 10px 36px 25px;
+        height: 70px;
+        width: 100px;
+  }
+
+  a .side_img{
+      padding-right: 10px;
+    width:36px;
+     height:25px;
+     float: left;
+     
+  }
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }

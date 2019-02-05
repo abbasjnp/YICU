@@ -1,0 +1,62 @@
+<p class="user_p">
+    Users
+</p>
+<div class="maindiv">
+    <div class="nested_div">
+        <div class="text">
+            <b>Users</b>
+        </div>
+        <!-- *******Search Div******* -->
+        <div class="diveer">
+                <div class="user_filter">
+                    <div class="dropdown">
+                        <button style="border-radius:0px; border: 1px solid transparent;
+                        background-color: darkgrey;"
+                            class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select
+                            Search
+                            <span class="caret" style="margin-left:15px"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                        <span> <input type="text" style="border:1px solid transparent;width: 64%" /></span>
+                    </div>
+                </div>
+                <!-- ****Search div end**** -->
+                <button class="btn1" style="float:right">Search</button>
+            </div>
+            <button type="button" class="btn btn-link" style="float:right; padding-right: 160px;">Clear filter</button>
+            
+            <!-- <h6 class="usertext">Clear Filter</h6> -->
+            
+        <div class="userTab">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Username</th>
+                        <th>Contacts</th>
+                        <th>Location</th>
+                        <th>Date of joining</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                        <td><img src={{j.url}} class="tab1img"></td>
+                        <td>{{j.id}}</td>
+                        <td>{{j.email}}</td>
+                        <td>New York</td>
+                        <td>24 Jan 19</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="justify-content: center; display: flex; padding-top:20px; padding-bottom: 40px ">
+            <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+        </div>
+    </div>
+
+</div>

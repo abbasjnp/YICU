@@ -1,0 +1,53 @@
+.heads_img{
+    height: 50px;
+    width: 40px;
+}
+
+.head{
+    height: 50px;
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+    border-bottom:2px solid darkgrey; 
+}
+.heads_log_img{
+    float: right;
+    height: 100%;
+}
+
+.heads_log_img1{
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+
+.hbtn{
+    height:40px;
+     width:40px;
+      border:1px solid transparent;
+       background-color: transparent;
+       padding: 0px;
+       margin: 0px;
+}
+
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }

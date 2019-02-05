@@ -1,0 +1,218 @@
+.userDetail_p{
+    padding: 8px 0px 5px 15px;
+    /* background-color: aquamarine; */
+    font-size: 12px;
+    box-shadow: 1px 2px 2px #888888;
+    margin: 0px;
+    background-color: white;
+    color: #888888;
+}
+
+.text_business{
+
+ padding:7px 20px;
+
+}
+
+.bus_img{
+    border-radius:50%; 
+}
+
+.interest{
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+    margin-top: 50px;
+}
+
+.details{
+ padding: 10px 3px;
+ border-bottom:1px solid gray; 
+}
+
+.maindiv{
+    padding: 15px 15px 0px 15px;
+    background-color: #d5d5d5;
+    height: 160vh;
+    margin-bottom: 15px;
+}
+.nestedDiv{
+    height: auto;
+    /* box-shadow: 2px 2px 2px 2px rebeccapurple; */
+    background-color: white;
+    height: auto;
+    padding: 15px;
+}
+
+.userDetBtn{
+    float: right;
+    /* color: white; */
+    /* border: 1px solid transparent; */
+    /* border-radius:4px;  */
+    padding: 5px 30px;
+    margin-top: -45px;
+    /* margin-right:100px;  */
+}
+
+.userDetBtn1{
+    float: left;
+    /* color: white; */
+    /* border: 1px solid transparent; */
+    /* border-radius:4px;  */
+    padding: 5px 30px;
+    margin-top: -45px;
+    margin-left: 550px;
+    
+}
+
+.userDetBtn1[hidden]{
+    float: right;
+    /* color: white; */
+    /* border: 1px solid transparent; */
+    /* border-radius:4px;  */
+    padding: 5px 30px;
+    margin-top: -28px;
+}
+
+
+
+.checked{
+    color: orange;
+}
+.card{
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    width: 100%;
+    height:100px;
+}
+.div1{
+float: left;
+/* padding: 10px; */
+}
+
+.div2{
+    height:100% ;
+    padding: 25px 10px 10px 0px;
+    float: right;
+    /* padding: 10px; */
+    /* background-color: red; */
+}
+
+.dash_img{
+    height: 100%;
+    width: 100px;
+}
+.div11{
+padding: 10px;
+}
+
+.div12{
+padding: 10px;
+font-size: 20px;
+
+}
+.tab_div{
+    padding: 10px;
+}
+.tab1{
+    border-top: 1px solid black;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    padding-top: 20px;
+    padding-left:45px ;
+    padding-right: 45px;
+}
+.tab2{
+    border-top: 1px solid darkgray;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    padding-left:30px ;
+    padding-right: 30px;
+}
+
+.tab1img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.tab2img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
+}
+    /* *************************Card */
+
+    .game_card{
+        /* border: 1px solid darkgrey; */
+        /* width: 100%; */
+        height:auto;
+       text-align: center;
+    }
+    
+    
+    .dash_img{
+        border-radius: 50%;
+        height: 110px;
+        width: 80%;
+    }
+
+    
+/* ***************************** */
+
+.tab_div{
+    margin-top:40px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: white;
+    cursor: default;
+    background-color: orange;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+
+}
+
+.nav-tabs>li>a {
+    /* margin-right: 2px; */
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: black;
+    margin-right: 10px;
+    padding: 10px 45px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    /* background-color: yellowgreen */
+}
+
+
+
+.table>tbody>tr>td, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    /* border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd; */
+
+}
+tr{
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+    border-bottom: 1px solid #ddd;  
+}
+
+th{
+    border-bottom: 2px solid lightgreen !important;
+
+}
+.chartHeader{
+    width: 100%;
+}

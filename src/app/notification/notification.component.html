@@ -1,0 +1,82 @@
+<p class="userDetail_p">
+  Notification
+</p>
+<div class="maindiv">
+  <div class="nestedDiv">
+    <div class="row" style="margin:0px">
+      <div class="col-md-8" style="height:auto;padding: 0%">
+        <p>Set Notification</p>
+        <div class="input_div">
+          <p style="">Title</p>
+          <input type="text" class="form-control pay_inp" placeholder="Notification Title" />
+          <p style="">Message</p>
+          <input type="text" class="form-control pay_inp1" placeholder="Message" />
+          <p style="">Location</p>
+          <div class="inner-addon left-addon ">
+            <i class="glyphicon glyphicon-search "></i>
+            <input type="text" class="form-control pay_inp" placeholder="Search" />
+          </div>
+          <p style="">Range(in mile)</p>
+          <input type="text" class="form-control pay_inp" placeholder="Range" />
+          <!-- <input type="text" placeholder="Description" class="pay_inp1"> -->
+          <!-- <input class="pay_inp" type="text" placeholder="&#f0c0; Search" /> -->
+          <p style="">Sports</p>
+          <div class="inner-addon left-addon ">
+            <i class="glyphicon glyphicon-search "></i>
+            <input type="text" class="form-control pay_inp" placeholder="Username" />
+          </div>
+
+
+          <div class="button_div">
+            <button type="button" class="btn1">Save</button><span style="margin-left:20px;">
+              <button type="button" class="btn2">Send</button>
+            </span>
+          </div>
+          <!-- <input type="text" style="font-family:Arial, FontAwesome"  placeholder="&#xf0C0;" /> -->
+          <!-- *******Table******* -->
+        </div>
+
+        <div class="table-responsive" style="margin-right:20px">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let j of paytabData; index as jindex">
+                <td>
+                  <mat-checkbox >Checked</mat-checkbox>
+                  <!-- <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"></label>
+                  </div> -->
+                </td>
+                <td>{{j.id}}</td>
+                <td>{{j.id}}</td>
+                <td>{{j.id}}</td>
+                <td>{{j.id}}</td>
+                <td>{{j.id}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- *******Notification description**** -->
+      <div class="col-md-4">
+        <div style="height:450px;border: 1px solid #d5d5d5;
+        border-radius: 2px;">
+          <div class="notif_div" style="">
+            <p>Notification Statistics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

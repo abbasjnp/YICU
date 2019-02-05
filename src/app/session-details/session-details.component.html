@@ -1,0 +1,115 @@
+<p class="userDetail_p">
+  Sessions / Play Cricket near....
+</p>
+<div class="maindiv">
+  <div class="nestedDiv">
+    <!-- ***********Profile start************* -->
+    <div class="container-fluid">
+      <div class="row" style="padding-top:20px;">
+        <div class="col-lg-3" style=" height: 200px;">
+          <img src="assets/img/game.jpg" width="100%" height="100%">
+        </div>
+        <div class="col-lg-9">
+          <!-- ******dETAILS START***** -->
+          <div class="details">
+            <h3 style="margin:0%">Join workout sessions near your location</h3>
+            <button class="userDetBtn">Suspend</button>
+            <!-- <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star checked" style="margin-right:7px;"></span>
+              <span class="fa fa-star " style="margin-right:7px;"></span>
+              <span class="fa fa-star" style="margin-right:10px"></span>
+              <span>Based on 200 rating</span> -->
+          </div>
+          <div class="container-fluid">
+            <div class="row" style="padding-top:20px;">
+              <div class="col-lg-6">
+                <p style="display:flex;justify-content:left">
+                  Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                      Pradesh, India </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                      Pradesh, India </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Location <span style="margin-left:30px">:<span style="margin-left:30px"> Sector 63, Noida, Uttar
+                      Pradesh, India </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Email <span style="margin-left:48px">:<span style="margin-left:30px">abc@gmail.com</span></span>
+                </p>
+              </div>
+              <div class="col-lg-6" style="padding-left:45px">
+                <p style="display:flex;justify-content:left">
+                  Mobile No. <span style="margin-left:30px">:<span style="margin-left:30px"> 1234567890 </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Joining Date <span style="margin-left:20px">:<span style="margin-left:30px">20/12/19</span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Mobile No. <span style="margin-left:30px">:<span style="margin-left:30px"> 1234567890 </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Joining Date <span style="margin-left:20px">:<span style="margin-left:30px">20/12/19</span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Mobile No. <span style="margin-left:30px">:<span style="margin-left:30px"> 1234567890 </span></span>
+                </p>
+                <p style="display:flex;justify-content:left">
+                  Joining Date <span style="margin-left:20px">:<span style="margin-left:30px">20/12/19</span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ******dETAILS END***** -->
+        </div>
+      </div>
+      <!-- ***********Profile end************* -->
+
+      <div>
+        Equipments <span style="margin-left:7px">:<span style="margin-left:7px"> The .table-responsive class creates a
+            responsive table. The table will then scroll horizontally on small devices (under 768px). When viewing on
+            anything larger than 768px wide, there is no difference: </span></span>
+      </div>
+
+      <div style="margin-top:30px;">
+        <h4>
+          Here is a solution that will both vertically and horizontally align your img within a div without any
+          stretching even if the image supplied is too small or too big to fit in the div. The html:Here is a solution
+          that will both vertically and horizontally align your img within a div without any stretching even if the
+          image supplied is too small or too big to fit in the div. The html:Here is a solution that will both
+          vertically and horizontally align your img within a div without any stretching even if the image supplied is
+          too small or too big to fit in the div. The html:
+        </h4>
+      </div>
+
+    </div>
+    <!-- **********Interested in div start********** -->
+    <div class="interest">
+      <div style="padding: 10px 0px;border-bottom: 1px solid black;margin: 10px;">
+        <h3 style="margin:0px;">
+          Players Participating
+        </h3>
+      </div>
+      <!-- Game -->
+      <div>
+        <div class="row" style="padding:20px 20px 5px 20px; ">
+          <div class="col-lg-2" *ngFor="let i of playerData" style="margin-bottom: 5px;align-items: center">
+            <div class="game_card">
+              <img src={{i.url}} class="dash_img">
+              <h4>{{i.gamename}}</h4>
+              <h6>{{i.level}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
