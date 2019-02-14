@@ -201,9 +201,20 @@ input[type="file"] {
     display: none;
 }
 .custom-file-upload {
-  width:50%;
+  width:70%;
     border: 1px solid #ccc;
     display: inline-block;
     padding: 0px 0px 0px 12px;
     cursor: pointer;
 }
+.sport-img img{margin-right:20px;height: 200px;width: 200px};
+
+.disabled {
+    opacity: 0.7;
+    cursor:not-allowed;
+  }
+  .btn2,.btn1[disabled]{
+      /* background-color:  #f4f0f0; */
+      opacity: 0.5;
+      cursor:not-allowed;
+  } 

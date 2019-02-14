@@ -8,17 +8,22 @@
   <div class="nestedDiv">
     <div class="row" style="margin:0px">
       <div class="col-md-12" style="height:auto;padding: 0%;">
+
+    <!-- Add sport Part -->
         <div class="add_sport">
-          <button style="float:right" class="btn1">Save</button>
+          
+         <form [formGroup]="addSportForm" (ngSubmit)="onSave()">
+          <button  style="float:right" class="btn1" type="submit">Save</button>
           <p>Set Notification</p>
 
-          <div class="input_div">
-            <p style="">Title</p>
-            <input type="text" class="form-control pay_inp" placeholder="Notification Title" />
+          
+            <div class="input_div">
+            <p >Title</p>
+            <input type="text" class="form-control pay_inp" formControlName="sportname" placeholder="Notification Title" required/>
 
 
-            <p style="">Select category <span style="font-size: 10px">(200*200 in ptx)</span></p>
-            <div class="sports_filter">
+            <p>Select category <span style="font-size: 10px">(200*200 in ptx)</span></p>
+            <!-- <div class="sports_filter">
               <input type="text" style="height:35px;display: flex;width: 100%; border: none;" />
               <span>
                 <div class="dropdown">
@@ -32,9 +37,20 @@
                   </ul>
                 </div>
               </span>
+            </div> -->
+
+            <div class="form-group" >
+              <select class="form-control" id="exampleFormControlSelect1" formControlName="category" required>
+                <option value="None"></option>
+                <option>Indoor</option>
+                <option>Outdoor</option>
+                <option>Fitness</option>
+                <option>Adventure</option>
+                <option>Others</option>
+              </select>
             </div>
             <!-- ********Choose fields start***** -->
-            <div class="choose_filter">
+            <!-- <div class="choose_filter">
               <input style="height:35px;display: flex;width: 100%; border: none;" />
               <span>
                 <button class="choose_btn">Browse</button>
@@ -52,47 +68,83 @@
                 <button class="choose_btn">Browse</button>
               </span>
             </div>
-          
-
+           -->
+           
             <label class="custom-file-upload">
-              <input type="file" /><span>
+              <input  type="file"  (change)="onSelectFile1($event)" required /><span>
+              <button disabled class="choose_btn" style="float:right" >Browse</button>
+            </span>
+            </label>
+            <label class="custom-file-upload">
+              <input type="file"  (change)="onSelectFile2($event)" required/><span>
               <button disabled class="choose_btn" style="float:right">Browse</button>
             </span>
             </label>
+             <label class="custom-file-upload">
+              <input type="file" (change)="onSelectFile3($event)" required/><span>
+              <button disabled class="choose_btn" style="float:right">Browse</button>
+            </span>
+            </label>
+            <label class="custom-file-upload">
+                <input type="file" (change)="onSelectFile4($event)" required/><span>
+                <button disabled class="choose_btn" style="float:right">Browse</button>
+              </span>
+              </label>
+            <div  class="sport-img">
+              <img  *ngIf="flag1" [src]="imagePreview1"> 
+              <img *ngIf="flag2" [src]="imagePreview2"> 
+              <img *ngIf="flag3" [src]="imagePreview3"> 
+              <img *ngIf="flag4" [src]="imagePreview4"> 
+            </div>
+             <!-- <div *ngIf="uploadMessage">
+               <h3>Uploaded Successfully....</h3>
+             </div>
+             -->
+            
+            
+            <!-- <div>
+              <img *ngFor='let url of urlsFlyer'  [src]="url" height="150" width="150"> <br/>    
+              <input type='file' (change)="uploadFlyerImage($event)" multiple formControlName="uploadFlyerImage" required>
+            </div> -->
 
+            
+
+           
             <!-- ********Choose fields end***** -->
 
-            <div class="button_div">
-              <button type="button" class="btn2">Upload</button><span style="margin-left:20px;">
+            <!-- <div class="button_div">
+              <button [disabled]="!uploadImageForm.valid" type="button" class="btn2" (click)="onUpload()">Upload</button><span style="margin-left:20px;">
               </span>
-            </div>
+            </div> -->
           </div>
+          
+        </form>
         </div>
 
-        <div class="table-responsive" style="margin-right:20px">
+        <div  style="margin-right:20px;margin-top:50px">
           <table class="table">
             <thead>
               <tr>
-
+                <th>ID</th>
                 <th>Sport name</th>
                 <th>Category</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let j of paytabData; index as jindex">
-                <td>{{j.id}}</td>
-                <td>{{j.id}}</td>
+              <tr *ngFor="let s_data of pagedItems;let i = index" >
+                <td>{{s_data.id}}</td>
+                <td>{{s_data.sportname}}</td>
+                <td>{{s_data.category}}</td>
                 <td style="width:35%;"><button class="btn4"><i class="fa fa-trash" style="margin-right:8px"></i>Edit</button>
                   <span>
-                    <button class="btn5"><i class="fa fa-close" style="margin-right:8px"></i>Delete</button>
+                    <button class="btn5" (click)="deleteSportDetail(s_data.id,i)"><i class="fa fa-close" style="margin-right:8px"></i>Delete</button>
                   </span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-
       <!-- *******Notification description**** -->
       <!-- <div class="col-md-4">
           <div style="height:450px;border: 1px solid #d5d5d5;
@@ -104,7 +156,27 @@
         </div> -->
     </div>
     <div style="justify-content: center; display: flex; padding-top:20px; padding-bottom: 40px ">
-        <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
-    </div>
+        <!-- <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination> -->
+        <!-- <div *ngFor="let item of pagedItems">{{item.name}}</div> -->
+
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+      </ul>  
+      
+      </div>
   </div>
 </div>

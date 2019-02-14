@@ -35,21 +35,21 @@
         <thead>
           <tr>
             <th>Applicant Name</th>
-            <th>Username</th>
-            <th>Contacts</th>
-            <th>Location</th>
-            <th>Date of joining</th>
-            <th>Country</th>
+            <th>Business Email</th>
+            <th>Business Phone</th>
+            <th>Business Name</th>
+            <th>Request Date</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let j of usertabData" (click)="openDetails()">
-            <td>{{j.name}}</td>
-            <td>{{j.id}}</td>
-            <td>{{j.email}}</td>
-            <td>New York</td>
-            <td>24 Jan 19</td>
-            <td>USA</td>
+            <td>{{j.Applicant_name}}</td>
+            <td>{{j.Business_Email}}</td>
+            <td>{{j.Business_Phone}}</td>
+            <td>{{j.Business_Name}}</td>
+            <td>{{j.Request_Date}}</td>
+            <td>{{j.status}}</td>
           </tr>
         </tbody>
       </table>

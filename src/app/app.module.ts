@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http'
+
+// Importing the components
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,6 +37,10 @@ import { GamificationDetailComponent } from './gamification-detail/gamification-
 FusionChartsModule.fcRoot(FusionCharts, Charts)
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { Service } from './service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {PageService} from './page.service'
 
 
 @NgModule({
@@ -56,18 +63,23 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     BusinessComponent,
     BusinessDetailComponent,
     PaymentDetailComponent,
-    GamificationDetailComponent
+    GamificationDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+
     FusionChartsModule,
     NgbModule,
     NgbPaginationModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [Service,PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

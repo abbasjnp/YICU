@@ -5,7 +5,8 @@
     <div class="nested_div">
 
         <!-- ******Card div***** -->
-        <div class="row" style="padding:10px 10px 10px 10px;">
+
+        <!-- <div class="row" style="padding:10px 10px 10px 10px;">
             <div class="col-lg-3" *ngFor="let i of imageData" style="margin-bottom: 5px;">
                 <div class="card">
                     <div class="div1">
@@ -21,6 +22,38 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="row" style="padding:10px 10px 10px 10px;">
+            <div class="col-lg-3" style="margin-bottom: 5px;">
+                <div class="card">
+                    <div class="div1">
+                        <div class="div11">
+                            New User
+                        </div>
+                        <div class="div12">
+                            {{current_user}}<span style="margin-left:10px;"><img src="assets/img/cross.png"></span>
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <img src="assets/img/notification.jpg" class="dash_img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3" style="margin-bottom: 5px;">
+                <div class="card">
+                    <div class="div1">
+                        <div class="div11">
+                            Total Users
+                        </div>
+                        <div class="div12">
+                            {{total_user}}<span style="margin-left:10px;"><img src="assets/img/cross.png"></span>
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <img src="assets/img/notification.jpg" class="dash_img">
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- ******Card div end****** -->
 
@@ -31,35 +64,35 @@
 
                 <div class="tab_div">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home"                       
-                                >Recent User</a></li>
-                        <li><a data-toggle="tab" href="#menu1" >Recent Sessions</a></li>
+                        <li class="active"><a data-toggle="tab" href="#home">Recent User</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Recent Sessions</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
                             <!-- <div class="table-responsive"> -->
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>Username</th>
-                                            <th>Contacts</th>
-                                            <th>Location</th>
-                                            <th>Date of joining</th>
-                                            <th>Country</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let j of tabData" (click)="openDetail()">
-                                            <td><img src={{j.url}} class="tab1img"></td>
-                                            <td>{{j.id}}</td>
-                                            <td>{{j.email}}</td>
-                                            <td>New York</td>
-                                            <td>24 Jan 19</td>
-                                            <td>USA</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Profile</th>
+                                        <th>Username</th>
+                                        <th>Contacts</th>
+                                        <th>Location</th>
+                                        <th>Date of joining</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let j of recentUserData" (click)="openDetail()">
+                                        <td><img src="http://192.168.1.28:8001/media/{{j.profilepic}}/" class="tab1img"></td>
+
+                                        <td>{{j.username}}</td>
+                                        <td>{{j.email}}</td>
+                                        <td>{{j.location}}</td>
+                                        <td>{{j.joiningdate}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
                             <!-- </div> -->
                         </div>
                         <div id="menu1" class="tab-pane fade">
@@ -68,21 +101,28 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Age</th>
-                                            <th>City</th>
-                                            <th>Country</th>
+                                            <th>Host</th>
+                                            <th>Sport</th>
+                                            <th>sport Category</th>
+                                            <th>Location</th>
+                                            <th>Session Category</th>
+                                            <th>Session Type</th>
+                                            <th>Created</th>
+                                            <th>Session Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let j of tabData">
-                                            <td><img src={{j.url}} class="tab2img"></td>
-                                            <td>{{j.id}}</td>
-                                            <td>{{j.email}}</td>
-                                            <td>{{j.name}}</td>
-                                            <td>New York</td>
-                                            <td>USA</td>
+                                        <tr *ngFor="let j of recentSessiondata">
+                                            <td><img src="http://192.168.1.28:8001/media/{{j.profilepic}}/" class="tab2img"></td>
+                                            <td>{{j.host}}</td>
+                                            <td>{{j.sport}}</td>
+                                           
+                                            <td>{{j.sportcategory}}</td>
+                                            <td>{{j.location}}</td>
+                                            <td>{{j.sessioncategory}}</td>
+                                            <td>{{j.sessiontype}}</td>
+                                            <td>{{j.created}}</td>
+                                            <td> {{j.sessiondate}}
                                         </tr>
                                     </tbody>
                                 </table>
@@ -95,13 +135,14 @@
             </div>
 
             <div class="col-lg-4" style="padding-top: 50px;padding-right: 30px;">
-                <!-- *******Chart div start***** -->
-                <div class="chartHeader">
+
+                <!-- <div class="chartHeader">
                     <fusioncharts width="100%" height="500" type="pie2d" [dataSource]="dataSource">
                     </fusioncharts>
-                </div>
+                </div> -->
+                <div id="chartContainer" style="height: 370px; width:100%; margin-left:auto;margin-right:auto;"></div>
 
-                <!-- ****** chart div end***** -->
+
             </div>
         </div>
     </div>
