@@ -1,8 +1,11 @@
-<div class="app_div">
-    <app-sidebar></app-sidebar>
-    
-    <div class="main">
-        <app-header></app-header>
-        <router-outlet></router-outlet>
+<app-login *ngIf="!logCounter" (loginCounter)="logCounter"></app-login>
+
+<div *ngIf="logCounter">
+    <div class="app_div">
+        <app-sidebar></app-sidebar>
+        <div class="main">
+            <app-header></app-header>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

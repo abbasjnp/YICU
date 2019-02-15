@@ -40,7 +40,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { Service } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {PageService} from './page.service'
+import {PageService} from './page.service';
+import { LoginComponent } from './login/login.component'
 
 
 @NgModule({
@@ -64,12 +65,14 @@ import {PageService} from './page.service'
     BusinessDetailComponent,
     PaymentDetailComponent,
     GamificationDetailComponent,
+    LoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
     FusionChartsModule,
     NgbModule,

@@ -91,7 +91,8 @@ export class DashboardComponent implements OnInit {
                         this.current_user = data.current_users;
                         this.total_user = data.total_user;                        
                          this.recentUserData=data.userdata; 
-                         this.recentSessiondata=data.sessiondata;                    
+                         this.recentSessiondata=data.sessiondata;     
+                         console.log(this.recentSessiondata);               
                          }
                       )    
                                

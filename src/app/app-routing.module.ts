@@ -15,16 +15,18 @@ import { BusinessComponent } from './business/business.component';
 import { BusinessDetailComponent } from './business-detail/business-detail.component';
 import { PaymentDetailComponent } from './payment-detail/payment-detail.component';
 import { GamificationDetailComponent } from './gamification-detail/gamification-detail.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:"dashboard",pathMatch:"full"  },
+  {path:'login',component:LoginComponent},
+  { path: '', redirectTo:"/login",pathMatch:"full"  },
   { path: 'dashboard', component:DashboardComponent  },
   { path: 'sports', component:SportsComponent  },
   { path: 'sessions', component:SessionsComponent  },
   { path: 'payment', component:PaymentsComponent  },
-  { path: 'gamification', component:GamificationComponent  },
-  { path: 'cms', component:CmsComponent  },
-  { path: 'notification', component:NotificationComponent  },
+  { path: 'gamification', component:GamificationComponent},
+  { path: 'cms', component:CmsComponent},
+  { path: 'notification', component:NotificationComponent},
   { path: 'settings', component:SettingsComponent  },
   { path: 'users', component:UsersComponent  },
   { path: 'business-detail', component:BusinessDetailComponent  },

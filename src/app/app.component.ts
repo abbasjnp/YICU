@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Yicu';
+     constructor(){console.log("sdfsdfsdfsdf")}
 }

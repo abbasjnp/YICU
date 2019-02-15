@@ -67,10 +67,10 @@ export class SportsComponent implements OnInit {
     //  Adding the Sports data to the server
   onSave() {
     const formData = new FormData();
-    if(this.firstfile){formData.append('image1', this.firstfile);}
-    if(this.secondfile){  formData.append('image2', this.secondfile);}
-    if(this.thirdFile){  formData.append('image3', this.thirdFile);}
-    // formData.append('image4', this.fourthFile);
+    if(this.firstfile){formData.append('image1',this.firstfile);}
+    if(this.secondfile){formData.append('image2', this.secondfile);}
+    if(this.thirdFile){ formData.append('image3', this.thirdFile);}
+    if(this.fourthFile){ formData.append('image4', this.fourthFile);}
     formData.append('sportname', this.addSportForm.value.sportname);
     formData.append('category', this.addSportForm.value.category);
 
@@ -133,28 +133,28 @@ getSportDetail(){
   this.service.getSport()
                       .subscribe((res:any)=>{
                       this.sportData=res.data;
-                      console.log(res);
+                     
                       this.allItems=res.data;
-                      console.log(this.allItems,"allitems");
+                      // console.log(this.allItems,"allitems");
                       this.setPage(1);
                       
                       })
 }
 setPage(page: number) {
-  console.log(page,"page");
+  // console.log(page,"page");
   // get pager object from service
-  console.log(this.allItems.length,"uyyyyyyyyyyyyyyyyyyyyy")
+  // console.log(this.allItems.length,"uyyyyyyyyyyyyyyyyyyyyy")
   this.pager = this.pageService.getPager(this.allItems.length, page);
-  console.log(this.pager);
+  // console.log(this.pager);
   // get current page of items
   this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
-  console.log(this.pagedItems);
+  // console.log(this.pagedItems);
 }
 
 deleteSportDetail(id:number,i){
     this.service.deleteSport(id)
                         .subscribe((res:any)=>console.log(res));
-                        this.sportData.splice(i, 1);
+                        this.pagedItems.splice(i, 1);
                      
 }
 

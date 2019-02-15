@@ -28,7 +28,7 @@ export class Service {
         const httpOption={
           headers : new HttpHeaders({            
             'Authorization':'Bearer JUYeo2IXPjw0BSLj1MHmuokMV4JRG9',
-            'Accept': 'application/json' 
+            'Accept':'application/json',
           })
         }
         return this.http.post((this._base+'sport/'),formData,httpOption);
@@ -39,7 +39,7 @@ export class Service {
   }
 
   deleteSport(id:number){
-    console.log(this._base+'delsport/'+id);
+   
     return this.http.delete(this._base+'sport/'+id+'/',this.httpOptions);
   }
 
@@ -49,6 +49,10 @@ export class Service {
 
   getBusiness(){
     return this.http.get(this._base+'business/',this.httpOptions);
+  }
+
+  getUser(){
+    return this.http.get(this._base+'register/',this.httpOptions);
   }
 }
 
