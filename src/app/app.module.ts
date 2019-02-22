@@ -22,6 +22,8 @@ import { FusionChartsModule } from 'angular-fusioncharts';
 // Import FusionCharts library
 import * as FusionCharts from 'fusioncharts';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxSpinnerModule} from 'ngx-spinner';
+
 
 // Load FusionCharts Individual Charts
 import * as Charts from 'fusioncharts/fusioncharts.charts';
@@ -34,14 +36,19 @@ import { PaymentDetailComponent } from './payment-detail/payment-detail.componen
 import { GamificationDetailComponent } from './gamification-detail/gamification-detail.component';
 
 // Use fcRoot function to inject FusionCharts library, and the modules you want to use
-FusionChartsModule.fcRoot(FusionCharts, Charts)
-
+//FusionChartsModule.fcRoot(FusionCharts, Charts)
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { Service } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {PageService} from './page.service';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {TokenInterceptorService} from './token-interceptor.service';
+import { PaginationComponent } from './pagination/pagination.component'
 
 
 @NgModule({
@@ -66,13 +73,18 @@ import { LoginComponent } from './login/login.component'
     PaymentDetailComponent,
     GamificationDetailComponent,
     LoginComponent,
+    AdminComponent,
+    PaginationComponent,
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
+    MatSnackBarModule,
 
     FusionChartsModule,
     NgbModule,
@@ -82,7 +94,13 @@ import { LoginComponent } from './login/login.component'
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [Service,PageService],
+  providers: [Service,PageService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

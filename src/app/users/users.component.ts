@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{Service} from './../service'
+import {Service} from './../service';
+import {PageService} from './../page.service'
 
 @Component({
   selector: 'app-users',
@@ -9,33 +10,41 @@ import{Service} from './../service'
 })
 export class UsersComponent implements OnInit {
   public usertabData;
-
-  // usertabData: any = [
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/layer.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  // ];
-
+  public allItems;
   constructor(private router:Router,
-              private service:Service) { }
+              private service:Service,
+              private pageService:PageService) { }
 
   ngOnInit() {
+   //debugger;
     this.getUserData();
+    console.log(this.allItems,"cccccccccccc");
   }
-
   getUserData(){
+   // debugger;
           this.service.getUser()
                              .subscribe((res:any)=>{
-                               console.log(res),
-                               this.usertabData=res.userdata
+                              // debugger;                            
+                               this.usertabData=res.userdata;
+                               console.log(res);
+                              // debugger
+                               this.allItems=res.userdata;
+                               console.log(this.usertabData,"iiiiiiiiiiiiiiiii");
+                              // debugger;
+                               this.getData(this.usertabData);
+
+
                               })
   }
-  openDetail(){
-    this.router.navigate(['/user-detail'])
+
+  getData(userdata){
+   // debugger;
+     this.allItems=userdata;
+     console.log(this.allItems,'aaaaaaaaaaaaa');
+  }
+  openDetail(id:number){
+    console.log(id);
+    this.router.navigate(['admin/user-detail',id])
   }
 
 }

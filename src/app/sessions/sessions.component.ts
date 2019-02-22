@@ -9,17 +9,6 @@ import {Service} from './../service'
 })
 export class SessionsComponent implements OnInit {
   public userData;
-
-  // usertabData: any = [
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/layer.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-  //   { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-   
-  // ];
   constructor(
               private router:Router,
               private service:Service) 
@@ -28,15 +17,14 @@ export class SessionsComponent implements OnInit {
   ngOnInit() {
     this.getSessionDetail()
   }
-  openDetails(){
-    this.router.navigate(['/session-details'])
-  }
+  // openDetails(){
+  //   this.router.navigate(['/session-details'])
+  // }
   getSessionDetail(){
         this.service.getSession()
-                              .subscribe(res=>{
-                                this.userData=res;
-                                console.log(res);
-                                console.log(this.userData);
+                              .subscribe((res:any)=>{
+                                this.userData=res.data;
+                               
                               })
 
   }

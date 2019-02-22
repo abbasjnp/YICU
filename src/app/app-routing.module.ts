@@ -16,25 +16,33 @@ import { BusinessDetailComponent } from './business-detail/business-detail.compo
 import { PaymentDetailComponent } from './payment-detail/payment-detail.component';
 import { GamificationDetailComponent } from './gamification-detail/gamification-detail.component';
 import { LoginComponent } from './login/login.component';
+import {AuthGuard} from './auth.guard'
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   { path: '', redirectTo:"/login",pathMatch:"full"  },
-  { path: 'dashboard', component:DashboardComponent  },
-  { path: 'sports', component:SportsComponent  },
-  { path: 'sessions', component:SessionsComponent  },
-  { path: 'payment', component:PaymentsComponent  },
-  { path: 'gamification', component:GamificationComponent},
-  { path: 'cms', component:CmsComponent},
-  { path: 'notification', component:NotificationComponent},
-  { path: 'settings', component:SettingsComponent  },
-  { path: 'users', component:UsersComponent  },
-  { path: 'business-detail', component:BusinessDetailComponent  },
-  { path: 'business', component:BusinessComponent  },
-  {path:'user-detail',component:UserDetailsComponent},
-  {path:'session-details',component:SessionDetailsComponent},
-  {path:'payment-details',component:PaymentDetailComponent},
-  {path:'gamification-details', component:GamificationDetailComponent}
+  {path:'admin', component:AdminComponent,canActivate:[AuthGuard],
+  children:[
+    { path: 'dashboard', component:DashboardComponent},
+     {path:'',redirectTo:'dashboard',pathMatch:'full'},
+    { path: 'sports', component:SportsComponent  },
+    { path: 'sessions', component:SessionsComponent  },
+    { path: 'payment', component:PaymentsComponent  },
+    { path: 'gamification', component:GamificationComponent},
+    { path: 'cms', component:CmsComponent},
+    { path: 'notification', component:NotificationComponent},
+    { path: 'settings', component:SettingsComponent  },
+    { path: 'users', component:UsersComponent  },
+    { path: 'business-detail', component:BusinessDetailComponent  },
+    { path: 'business', component:BusinessComponent  },
+    {path:'user-detail/:id',component:UserDetailsComponent},
+    {path:'session-details',component:SessionDetailsComponent},
+    {path:'payment-details',component:PaymentDetailComponent},
+    {path:'gamification-details', component:GamificationDetailComponent}
+  ]}
+ 
 
 ];
 

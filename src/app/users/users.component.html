@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let j of usertabData" (click)="openDetail()">
+                    <tr *ngFor="let j of usertabData" (click)="openDetail(j.id)">
                         <td><img src='http://192.168.1.28:8001/media/{{j.profilepic}}' class="tab1img"></td>
                         <td>{{j.username}}</td>
                         <td>{{j.email}}<br>{{j.mobile}}</td>
@@ -54,9 +54,10 @@
                 </tbody>
             </table>
         </div>
-        <div style="justify-content: center; display: flex; padding-top:20px; padding-bottom: 40px ">
+        <!-- <div style="justify-content: center; display: flex; padding-top:20px; padding-bottom: 40px ">
             <ngb-pagination size="lg" [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
-        </div>
+        </div> -->
+        <app-pagination [items]="usertabData"></app-pagination>
     </div>
 
 </div>

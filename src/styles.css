@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+/* .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
     color: #777;
     cursor: not-allowed;
     background-color: #fff;
@@ -48,7 +48,9 @@
 .pagination{
     margin: 0%;
     padding: 0%;
-}
+} */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* ******************Table*************** */
 .table>tbody>tr>td, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     padding: 12px 0px 12px 12px;
@@ -261,3 +263,5 @@ input, textarea, select, button {
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

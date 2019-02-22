@@ -12,8 +12,7 @@ export class SportsComponent implements OnInit {
       constructor( private fb: FormBuilder,
                    private service: Service,
                    private pageService:PageService
-                   ) { console.log('Constructor');
-  }
+                   ) {   }
   imagePreview1;
   flag1: boolean = false;
   flag2: boolean = false;
@@ -44,26 +43,10 @@ export class SportsComponent implements OnInit {
     category: ['', Validators.required],
 
   })
-  
-
-
-  paytabData: any = [
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: 'Abc Vats', email: 'abc@gmail.com', url: 'assets/img/game.jpeg' },
-    { name: 'New User', id: '1', email: 'abc@gmail.com', url: 'assets/img/notification.jpg' },
-
-  ];
   ngOnInit() {
     this.getSportDetail();
    
   }
-  
-  
     //  Adding the Sports data to the server
   onSave() {
     const formData = new FormData();
@@ -77,7 +60,6 @@ export class SportsComponent implements OnInit {
     this.service.addSport(formData)
       .subscribe((res: any) => {
         this.result = res;
-        console.log(this.result);
       }
       );
       this.getSportDetail();

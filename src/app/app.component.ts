@@ -8,5 +8,12 @@ import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 })
 export class AppComponent {
   title = 'Yicu';
-     constructor(){console.log("sdfsdfsdfsdf")}
+  login = false;
+  logCounter = true;
+     constructor(){}
+
+     OK(res){
+       this.login=!this.login;
+       this.logCounter=!this.logCounter;
+     }
 }
